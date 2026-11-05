@@ -2,18 +2,26 @@ const express = require("express");
 const app = express();
 const port = process.env.PORT || 3001;
 
-app.use(express.json())
-app.use(express.urlencoded({extended: true}));
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
-app.get("/", (req, res) => res.type('html').send(html));
+// Rota principal
+app.get("/", (req, res) => res.type("html").send(html));
 
-app.get('/req', (req, res) => {
-    console.log("Just got a request!")
-    res.send('Yo!')
-})
+// Rota original do projeto
+app.get("/req", (req, res) => {
+    console.log("Just got a request!");
+    res.send("Yo!");
+});
 
-app.listen(port, () => console.log(`Example app listening on port ${port}!`));
+// 1º DESAFIO - Endpoint /meunome
+app.get("/meunome", (req, res) => {
+    res.send("Meu nome é SEU NOME COMPLETO");
+});
 
+app.listen(port, () => {
+    console.log(`Example app listening on port ${port}!`);
+});
 
 const html = `
 <!DOCTYPE html>
@@ -64,4 +72,4 @@ const html = `
     </section>
   </body>
 </html>
-`
+`;
