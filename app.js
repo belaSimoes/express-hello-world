@@ -42,6 +42,17 @@ app.get("/pokemons", (req, res) => {
     res.json(pokemons);
 });
 
+// 4º DESAFIO - Endpoint /series
+app.post("/series", (req, res) => {
+    const series = [
+        "Stranger Things",
+        "Breaking Bad",
+        "Dark"
+    ];
+
+    res.json(series);
+});
+
 app.listen(port, () => {
     console.log(`Example app listening on port ${port}!`);
 });
