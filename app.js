@@ -16,7 +16,7 @@ app.get("/req", (req, res) => {
 
 // 1º DESAFIO - Endpoint /meunome
 app.get("/meunome", (req, res) => {
-    res.send("Meu nome é SEU NOME COMPLETO");
+    res.send("Meu nome é Isabela Simões");
 });
 
 app.listen(port, () => {
